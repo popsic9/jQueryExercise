@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <title>Challenge Two</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    
+    <!-- <script>
+	   function setHomeAddress(){
+      // YOUR  JavaScript CODE HERE
+      var x = document.getElementById("billing").value;
+      if(document.getElementById("useBilling").checked){
+        document.getElementById("home").value = x;
+        document.getElementById("home").readOnly = true;
+      }else{
+        document.getElementById("home").value = null;
+        document.getElementById("home").readOnly = false;
+      }
+     }
+    </script> -->
+</head>
+<body>
+    <h1>Challenge Two</h1>
+    <form action="challenge3.html">
+      <fieldset>
+        <legend>Billing Information</legend>
+        <div>
+          <label for ="billing">Billing Address:</label><br>
+          <textarea name="billingAdd" id="billing"></textarea>
+        </div>
+
+        <div>
+          <label for ="home">Home Address:</label><br>
+          <!-- <input type="checkbox" name="useBilling" onclick = "setHomeAddress()" id="useBilling"> Same as above <br> -->
+          <input type="checkbox" name="useBilling" id="useBilling"> Same as above <br>
+        <textarea name="homeAdd" id="home"></textarea>
+        </div>
+        <input type = "submit" value = "Go To Challenge 3">
+      </fieldset>
+      </form>
+  <script>
+    $("#useBilling").click(function(){
+      if($("#useBilling").prop("checked")){
+        $("#home").val($("#billing").val()).attr("readOnly",true);
+      }else{
+        $("#home").val("").attr("readOnly",false);
+      }
+      
+    });
+  </script>
+</body>
+</html>
